@@ -1,0 +1,77 @@
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    color:green;
+    text-align: center;
+}
+
+.header {
+    border:1px solid black;
+    @include border-radius(10px);
+}
+
+@mixin image($height:20px,$width){ //parameter name change at FA
+    width:$width;
+    height: $width ;
+    @if $height != 20px {
+        box-shadow: 9px 9px grey;
+        margin:10vh 40vw;
+      }
+}
+
+.image{
+    @include image(400px,$width:300px)
+    // @include image($width:300px,400px)
+    // @include image($width:300px,$height)    error
+    // @include image($width:300px)             error
+    // @include image($width:300px,$height:400px)
+}
+
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+  border:1px solid black;
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+.avatar {
+  @include square(100px, $radius: 4px);
+}
+
+@mixin border($width, $color) {
+    border: 1px solid $color;
+    font-size: $width;
+  }
+  
+  @for $i from 1 through 5 {
+    .border-#{$i} {
+      @include border($i * 20px, blue);
+    }
+  }
+
+  @mixin font-size($size) {
+    font-size: $size;
+  }
+  
+  $font-sizes: (
+    "small": 3rem,
+    "medium": 4rem,
+    "large": 5rem
+  );
+  
+  @each $size, $value in $font-sizes {
+    .font-#{$size} {
+      @include font-size($value);
+    }
+  }
+
+
+@mixin example { 
+    @content; 
+    background-color: green;
+} 
+.reddish-div{ 
+    @include example{ color : red } 
+}
+
