@@ -1,0 +1,19 @@
+
+
+
+
+
+
+<a routerlink="new-component">HomePage</a>
+
+<input type="text" [formControl]="input"  (input)="getValue(input.value)" value="{{ userInput | convertdate}}" >
+
+<p>Date: {{ userInput | convertdate }}</p>
+
+
+
+<input type="text" appInput>
+<!-- <app-new-component></app-new-component> -->
+<router-outlet></router-outlet>
+
+<!-- sir given as task and custom pipe and custoim directive -->

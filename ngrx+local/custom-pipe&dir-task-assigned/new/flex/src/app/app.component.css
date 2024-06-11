@@ -1,0 +1,13 @@
+div{
+    background-color: blue;
+    height:20px;
+    border: 1px solid red;
+   width:300px
+}
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
