@@ -1,0 +1,29 @@
+
+<button (click)="onAnimate()">Animate</button>
+<button (click)="onShrink()">Shrink</button>
+
+<div
+  style="height:100px; width:100px"
+  [@divState]="state">
+</div>
+
+<div
+  style="height:100px; width:100px"
+  [@wildState]="wildState">
+</div>
+
+<div><ul>
+  <li
+    [@list]>
+    List 1</li>
+  <li
+    [@list]>
+    List 2</li>
+  <li
+    [@list]>
+    List 3</li>
+  <li
+    [@list]>
+    List 4</li>
+</ul></div>
+<app-my-component></app-my-component>

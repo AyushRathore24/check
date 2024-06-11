@@ -1,0 +1,10 @@
+<button class="btn btn-primary shift"(click)="increment()">Increment
+(3 by props)</button>
+
+<button class="btn btn-primary shift"(click)="decrement()">Decrement</button>
+<button class="btn btn-primary shift" (click)="multiply(5)">Multiply by 5</button>
+<button class="btn btn-primary shift" (click)="multiply(3)">Multiply by 3</button>
+<div class="shift">Current Count: {{ count | async }}</div>
+
+<button class="btn btn-danger shift"(click)="reset()">Reset </button>
+
