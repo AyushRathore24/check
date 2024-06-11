@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Test 29 April <br />
+
+    <button onclick="Result()">Click Me</button>
+    <h2 id="result"></h2>
+    <script>
+      function Result() {
+          let newk= [0,0,0,0,0,0];
+        // let newk = [0, 0, 0, 0];
+
+         let k=[-1,-4,0,-1,2,-3,0,0];
+        //let k = [-3, 2, -4, 1];
+        let j = 0;
+
+        for (let i = 0; i < k.length; i++) {
+          if (k[i] >= 0) {
+            newk[j++] = k[i];
+            j++;
+          }
+        }
+        let pi = 1;
+        for (let i = 0; i < k.length; i++) {
+          if (k[i] < 0) {
+            if (newk[pi] == 0) newk[pi++] = k[i];
+            pi++;
+          }
+
+          // newk[start]=k[i];
+          // else{
+        }
+        document.write(newk);
+        console.log(newk);
+      }
+    </script>
+  </body>
+</html>
