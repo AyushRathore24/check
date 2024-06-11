@@ -1,0 +1,15 @@
+<div class="nav">
+  <div class="container">
+    <h1>NGRX</h1>
+    <div class="flex">
+      <a class="links" routerLinkActive="active" routerLink="home">Home</a>
+      <a class="links" routerLinkActive="active" routerLink="bookngrx" *ngIf="authService.isloggedin" >Books</a>
+      <a class="links" routerLinkActive="active" routerLink="register">Register</a>
+      <a class="links" routerLinkActive="active" *ngIf="!authService.isloggedin" routerLink="login">Login</a>
+      <a class="links logout" routerLinkActive="active"  *ngIf="authService.isloggedin"  (click)="logout()">Log<span>Out</span></a>
+
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
