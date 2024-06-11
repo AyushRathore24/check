@@ -1,0 +1,9 @@
+<!-- src/app/items/items.component.html -->
+<div *ngIf="loading$ | async">Loading...</div>
+<div *ngIf="error$ | async as error">Error: {{ error }}</div>
+
+<ul *ngIf="(items$ | async)">
+  <li *ngFor="let item of items$ | async">
+    {{ item.name }}
+  </li>
+</ul>

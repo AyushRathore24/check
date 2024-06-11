@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Test 29 April <br />
+    <input type="text" id="input" />
+    <button onclick="Result()">Click Me</button>
+    <h2 id="result"></h2>
+    <script>
+      let p = "";
+      let i = 0;
+      let k;
+      function Result() {
+        k = document.querySelector("input").value;
+        generateResult();
+      }
+      function generateResult() {
+        if (i == k.length) {
+          console.log(p);
+          document.getElementById("result").innerHTML = p;
+          return;
+        }
+
+        if (k.charAt(i) == k.charAt(i + 1)) {
+          i++;
+        } else {
+          p += k.charAt(i);
+        }
+        i++;
+        generateResult();
+      }
+    </script>
+  </body>
+</html>
+
+<!-- for(let i=0;i<k.length;i++){
+    // for(let j=i+1;j<k.length;j++)
+    if(k.charAt(i)==k.charAt(i+1))
+       { i++;}
+       else{
+        p+=k.charAt(i);
+       }
+  } -->

@@ -1,0 +1,10 @@
+.ag-theme-alpine{
+ height:  22vh;
+ width: 65.5vw;
+}
+.child{
+    display: flex;
+}
+h3{
+    text-align: center;
+}
