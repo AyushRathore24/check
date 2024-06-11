@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="top font">CRUD OPERATIONS</div>
+  <button class="btn top" (click)="addtoggle()">Add User</button>
+</div>
+
+<div id="main">
+  <div id="filled">
+    <div class="main2" *ngFor="let item of data">
+    
+      <div >
+        <h3 class="common">ID: {{ item.id }}</h3>
+        <br>
+        <h4 class="common">UserId: {{ item.userId }}</h4>
+        <br><span class="bold"> Title</span> : {{ item.title }}<br><span class="bold"> Body</span> :  {{item.body}}
+      </div>
+      <div id="disp">
+          <button class="btn" (click)="UpdateData(item)"  (click)="edittoggle()">Edit</button>
+          <button class="btn" (click)="deleteData(item.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div id="form" *ngIf="showForm">
+    <h2 *ngIf=" addform">Add New Data</h2><br>
+    <h2 *ngIf=" EditForm">Edit Data</h2><br>
+    <form [formGroup]="postForm" >
+    <!-- <form [formGroup]="postForm" (ngSubmit)="UpdateData()"> -->
+      <div>userId</div>
+      <input type="number" formControlName="userId">
+      <div>Title:</div>
+      <input type="text" class="input" formControlName="title">
+      <div>Body:</div>
+      <textarea formControlName="body" class="input"></textarea>
+      <button class="btn" *ngIf="showForm && addform" (click)="add()">Save</button>
+      <button class="btn" *ngIf="showForm && EditForm" type="button" (click)="updateit()"  >Update</button>   
+      <button class="btn" (click)="cancel()">Cancel</button> 
+    </form>
+  </div>  
+</div>
+
+
