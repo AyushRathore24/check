@@ -1,0 +1,11 @@
+<!-- src/app/components/post-list/post-list.component.html -->
+
+<div class="container">
+
+    <div class="secondcont" *ngIf="(posts$ | async)">
+        <div class="thirdcont" *ngFor="let post of posts$ | async">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.genre }}</p>
+        </div>
+    </div>
+</div>

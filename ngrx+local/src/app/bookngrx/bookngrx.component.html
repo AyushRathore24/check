@@ -1,0 +1,44 @@
+<div class="container">
+ 
+
+    <a class="btn add" (click)="toggle()" >Add Book</a>
+     
+    <div class="secondcont" *ngIf="(posts$ | async)  && tomain ">
+        <div class="thirdcont" *ngFor="let post of posts$ | async" >
+            <div class="card">
+
+                <h2>{{ post.title }}</h2>
+                <h4>{{ post.genre }}</h4>
+                <h4>{{ post.publishedyear}}</h4>
+                <h4>{{ post.author}}</h4>
+
+                <div class="options">
+                    <a class="btn edit" (click)="getAllDetails(post)">Edit</a>
+                    <a class="btn del" (click)="deletebook(post)">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <!-- //for addingUp the data -->
+  <form class="form" [formGroup]="bookForm"   *ngIf="toshow"   >
+    <h1 *ngIf="toAdd">Adding New data</h1>
+  <h1  *ngIf="toEdit">Editing the data</h1>
+    Title:<br>
+    <input type="text" formControlName="title"><br>
+    Author:<br>
+    <input type="text" formControlName="author"><br>
+    PublishedYear:<br>
+    <input type="number" formControlName="publishedyear">
+    Genre:<br>
+    <input type="string" formControlName="genre"><br>
+    <div class="flex">
+      <button class="btn ok" type="submit"  id="gap"        *ngIf="toAdd"  (click)="addBook()" >Add Book</button>
+      <button class="btn ok" type="button" id="gap"  *ngIf="toEdit" (click)="updateBook()" >Update</button>
+      <button class="btn ok" type="submit"  id="gap" (click)="toggleforCancel()">Cancel</button>
+    </div>
+  </form>

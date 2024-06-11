@@ -1,0 +1,43 @@
+<title>Books ManageMent</title> 
+
+<nav class="flex align-center">
+<!--  header(navbar)   -->
+  <p class="main-title"     routerLink="home"><span>Books</span>&nbsp;ManageMent</p>
+  <ul>
+    <li class="big-screens">
+      <a   class="bigfont"  routerLinkActive="active"  routerLink="home">Home</a>
+      <a  class="bigfont" *ngIf="authService.isLoggedIn" routerLinkActive="active"  routerLink="books">Books</a>
+      <a  class="bigfont" *ngIf="authService.isLoggedIn" routerLinkActive="active"  routerLink="bookngrx">Bookngrx</a>
+      <button class="btn register bigfont"  *ngIf="!authService.isLoggedIn "  routerLinkActive="active"  routerLink="register">Register</button>
+      <button class="btn register bigfont"  *ngIf="authService.isAdmin"     routerLinkActive="active"  routerLink="subadmin">Register</button>
+      <button class="btn login bigfont"  *ngIf="!authService.isLoggedIn"   routerLinkActive="active"  routerLink="login">Log In</button>
+      <button class="btn login bigfont"  *ngIf="authService.isLoggedIn"   routerLinkActive="active"  routerLink="login"><a (click)="logout()">Logout</a></button>
+      
+    <li class="small-screens">
+      <i class="fa-solid fa-bars"></i>
+    </li>
+  </ul>
+</nav>
+<div class="content">
+  <span>{{ title }}</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
